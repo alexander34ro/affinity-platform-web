@@ -1,4 +1,4 @@
-# Autonomous navigation
+# Affinity Platform Web Client
 
 It is a Rails 5.1.5 app with Ruby 2.4.2
 
@@ -6,9 +6,9 @@ It is a Rails 5.1.5 app with Ruby 2.4.2
 
 Get the source:
 
-    $ git clone https://github.com/alexander34ro/autonomous-navigation.git
+    $ git clone https://github.com/alexander34ro/affinity-platform-web.git
 
-    $ cd autonomous_navigation
+    $ cd affinity-platform-web
 
 Then install the bundler gem:
 
