@@ -21,7 +21,7 @@ $('document').ready(function () {
     let cell = new mxCell(
       new Connection,
       new mxGeometry(0, 0, 50, 50),
-      'curved=1;endArrow=classic;html=1;strokeColor=#17a2b8;strokeWidth=2;endSize=10'
+      'curved=1;endArrow=classic;html=1;strokeColor=#17a2b8;strokeWidth=2;endSize=8'
     );
     cell.geometry.setTerminalPoint(new mxPoint(20, 20), true);
     cell.geometry.setTerminalPoint(new mxPoint(80, 80), false);
