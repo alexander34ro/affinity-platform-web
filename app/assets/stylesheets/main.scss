@@ -1,0 +1,70 @@
+@import 'bootstrap';
+@import 'font-awesome';
+
+.subtitle {
+  color: #555;
+  font-weight: 400;
+}
+
+.input-group-text {
+  color: #fff;
+  background-color: #343a40;
+  border: #343a40;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.form-control:focus {
+  border-color: #495057;
+  box-shadow: 0 0 0 0.1rem rgba(0, 12, 25, 0.25);
+}
+
+input {
+  text-align: center;
+}
+
+.unit {
+  display: inline-block;
+  &.unit-free {
+  }
+  &.unit-wall {
+    background: #eee;
+  }
+  &.unit-main {
+    background: #abc;
+  }
+  &.unit-end {
+    background: #15a;
+  }
+}
+
+#ring {
+  background: #333;
+  width: auto;
+  height: 64vh;
+  margin: auto;
+  line-height: 0;
+}
+
+.awesomplete {
+  width: 100%;
+}
+
+#components {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.components-container {
+  box-shadow: inset 0px 8px 12px -12px #ddd, inset 0px -8px 12px -12px #ddd;
+}
+
+.component {
+  cursor: pointer;
+}
+
+.btn {
+  min-width: 46px;
+  min-height: 46px;
+  line-height: 2;
+}

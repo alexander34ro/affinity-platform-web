@@ -1,4 +1,4 @@
-# Regression problem
+# Autonomous navigation
 
 It is a Rails 5.1.5 app with Ruby 2.4.2
 
@@ -6,9 +6,9 @@ It is a Rails 5.1.5 app with Ruby 2.4.2
 
 Get the source:
 
-    $ git clone https://github.com/alexander34ro/basic-regression.git
+    $ git clone https://github.com/alexander34ro/autonomous-navigation.git
 
-    $ cd regression
+    $ cd autonomous_navigation
 
 Then install the bundler gem:
 

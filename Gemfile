@@ -7,10 +7,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails',                   '5.1.4'
+gem 'rails', '5.1.4'
 gem 'font-awesome-rails'
 gem 'haml'
-gem 'bcrypt'                  
+gem 'bcrypt'
 gem 'faker'
 gem 'carrierwave'
 gem 'mini_magick'
@@ -38,7 +38,7 @@ gem 'rack-tracker'
 gem "pry"
 
 group :development, :test do
-  gem 'sqlite3', '1.3.12'
+  gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.0', platform: :mri
 end
 

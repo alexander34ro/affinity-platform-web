@@ -2,11 +2,16 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Parkinson Regression
+    %title Affinity Platform
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js'
     = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.1.1/math.js'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.4/awesomplete.js'
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.4/awesomplete.css'
+    :javascript
+      mxBasePath = 'vendor/mxgraph-master/javascript/src';
+    <script type="text/javascript" src="public/mxgraph-master/javascript/mxClient.js"></script>
   %body
     = yield
