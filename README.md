@@ -1,6 +1,6 @@
 # Affinity Platform Web Client
 
-It is a Rails 5.1.5 app with Ruby 2.4.2
+It is a Rails 5.2 app with Ruby 2.4
 
 ## Running on your Machine
 
