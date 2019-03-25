@@ -1,7 +1,11 @@
 class Component {
-    constructor(name, command) {
+    constructor(name, config_options) {
+        this.id = 0
+        this.type = "component";
         this.name = name;
-        this.command = command;
+        this.config_options = config_options;
+        this.input = '';
+        this.output = '';
     }
 
     toString() {
@@ -12,6 +16,6 @@ class Component {
 function extractName(e) {
     let o = new Component();
     o.name = e.currentTarget.firstElementChild.innerText;
-    o.command = 'yo';
+    o.config_options = {};
     return o;
 }

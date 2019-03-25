@@ -1,8 +1,15 @@
 .p-3
   .row
-    .col-lg-12.py-3.px-3
-      %h2 Affinity Platform
-      %h5.subtitle Create an app by chaining components
+    .col-lg-12.p-3
+      %h2.float-left 
+        Affinity Platform
+        .h5.subtitle Create an app by chaining components
+      #import.float-right.btn.btn-dark
+        %i.fa.fa-upload.mr-1
+        Import Script
+      #generate.mr-1.float-right.btn.btn-dark
+        %i.fa.fa-print.mr-1
+        Generate Script
   .row
     .col-lg-12.px-3
       .row.pt-2
@@ -20,13 +27,15 @@
           %hr.mt-0
         .col-lg-9
           #ring
-          %hr
-          #import.btn.btn-dark
-            %i.fa.fa-upload.mr-1
-            Import Script
-          #preview.btn.btn-dark
-            %i.fa.fa-print.mr-1
-            Preview Script
-          #generate.float-right.btn.btn-dark
-            %i.fa.fa-download.mr-1
-            Download Script
+  %hr
+  .row
+    .col-lg-12
+      = text_area_tag 'script', "", rows: 10, class: "form-control"
+
+#componentDetails.modal.fade
+  .modal-dialog.modal-dialog-centered
+    .modal-content
+      .modal-header
+        %h4.modal-title Component Options
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      .modal-body

@@ -33,14 +33,5 @@ function initGraph(container) {
         // Gets the default parent for inserting new cells. This
         // is normally the first child of the root (ie. layer 0).
         parent = graph.getDefaultParent();
-
-        graph.addListener(mxEvent.DOUBLE_CLICK, function (sender, evt) {
-            let cell = evt.getProperty('cell'); // cell may be null
-            if (cell != null) {
-                console.log(cell);
-                graph.setSelectionCell(cell);
-            }
-            evt.consume();
-        });
     }
 }

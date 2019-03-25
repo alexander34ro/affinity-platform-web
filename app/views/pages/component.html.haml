@@ -1,0 +1,7 @@
+%h5.my-3.text-center= @component[:name]
+= form_tag "", id: "save-component" do
+    - @component[:config_options].each do |option|
+        %label= option.capitalize
+        = text_field_tag option, "", class: "form-control config-option"
+    %hr
+    = submit_tag "Save", class: "btn btn-dark float-right"

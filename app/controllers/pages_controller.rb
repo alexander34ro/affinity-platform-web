@@ -10,6 +10,12 @@ class PagesController < ApplicationController
     render layout: false
   end
 
+  def component
+    term = params[:component]
+    @component = @components.select { |c| !c.instance_of?(String) && c[:name] == term }.first
+    render layout: false
+  end
+
   private
 
   def load_components
