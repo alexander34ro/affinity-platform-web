@@ -8,6 +8,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.2'
+gem 'github_api'
+gem 'devise'
 gem 'font-awesome-rails'
 gem 'haml'
 gem 'bcrypt'

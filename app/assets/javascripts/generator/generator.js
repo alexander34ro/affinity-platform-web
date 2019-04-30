@@ -4,6 +4,7 @@ function generate() {
     let connections = cells.filter(c => c.value.type === "connection");
     let components = cells.filter(c => c.value.type === "component");
     console.log(cells);
+    console.log(components)
 
     let script =
 `ins:

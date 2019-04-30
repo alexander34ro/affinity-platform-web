@@ -14,4 +14,8 @@
       mxBasePath = 'vendor/mxgraph-master/javascript/src';
     <script type="text/javascript" src="public/mxgraph-master/javascript/mxClient.js"></script>
   %body
+    - if notice
+      %p.alert.alert-success= notice
+    - if alert
+      %p.alert.alert-danger= alert
     = yield

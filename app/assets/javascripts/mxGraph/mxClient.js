@@ -7056,7 +7056,7 @@ var mxUtils =
 	 * 
 	 * Defines the default family for all fonts. Default is Arial,Helvetica.
 	 */
-	DEFAULT_FONTFAMILY: 'Arial,Helvetica',
+	DEFAULT_FONTFAMILY: 'Helvetica',
 
 	/**
 	 * Variable: DEFAULT_FONTSIZE
@@ -7147,7 +7147,7 @@ var mxUtils =
 	 * Defines the rounding factor for rounded rectangles in percent between
 	 * 0 and 1. Values should be smaller than 0.5. Default is 0.15.
 	 */
-	RECTANGLE_ROUNDING_FACTOR: 0.15,
+	RECTANGLE_ROUNDING_FACTOR: 0.42,
 
 	/**
 	 * Variable: LINE_ARCSIZE
@@ -44426,14 +44426,14 @@ mxPrintPreview.prototype.border = 0;
  * 
  * The margin at the top of the page (number). Default is 0.
  */
-mxPrintPreview.prototype.marginTop = 0;
+mxPrintPreview.prototype.marginTop = 4;
 
 /**
  * Variable: marginBottom
  * 
  * The margin at the bottom of the page (number). Default is 0.
  */
-mxPrintPreview.prototype.marginBottom = 0;
+mxPrintPreview.prototype.marginBottom = 4;
 
 /**
  * Variable: x0

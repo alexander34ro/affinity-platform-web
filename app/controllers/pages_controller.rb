@@ -27,14 +27,21 @@ class PagesController < ApplicationController
         bluetooth_sender,
         bluetooth_server,
         'Heart Rate Extractor',
-        'Android Wear Accelerometer Extractor',
+        'Accelerometer Extractor',
         'Android Wear Heart Rate Pass-through',
+        'Android Route Display',
         'Affinity Emotion Analyzer',
         'Affinity Emotion Visualizer',
+        'Affinity Route Planner',
         'Camera Extractor',
         'Camera Fuser',
         'Band Reader'
       ]
+
+    # https://github.com/search?utf8=%E2%9C%93&q=affinity+filename%3Acomponent.js+path%3A%2F&type=Code
+    github = Github.new
+    components_from_github = github.search.repos(q: 'filename:affinity_component.json path:/', type: 'Code')
+    @components += components_from_github.items.map(&:full_name)
   end
 
   def command_executor

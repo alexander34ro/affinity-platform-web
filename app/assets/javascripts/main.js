@@ -1,5 +1,9 @@
 // Main
 $('document').ready(function () {
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
   initGraph($('#ring')[0]);
   initAwesomplete();
 
@@ -8,10 +12,10 @@ $('document').ready(function () {
       parent,
       null,
       extractName(e),
-      20,
-      20,
-      20,
-      20,
+      24,
+      24,
+      24,
+      24,
       'ROUNDED'
     );
     graph.updateCellSize(vertex);
