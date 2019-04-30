@@ -39,9 +39,10 @@ class PagesController < ApplicationController
       ]
 
     # https://github.com/search?utf8=%E2%9C%93&q=affinity+filename%3Acomponent.js+path%3A%2F&type=Code
-    github = Github.new
-    components_from_github = github.search.repos(q: 'name ins out filename:affinity_component.json path:/', type: 'Code')
-    @components += components_from_github.items.map(&:full_name)
+    creds = ENV['GITHUB_CREDS']
+    github = Github.new basic_auth: creds
+    components_from_github = github.search.code('name ins out filename:affinity_component.json path:/')
+    @components += components_from_github.items.map { |i| { name: i.repository.name, description: i.repository.description, config_options: []} }
   end
 
   def command_executor
