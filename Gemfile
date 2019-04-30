@@ -9,7 +9,7 @@ end
 
 gem 'rails', '~> 5.2'
 gem 'github_api'
-gem 'devise'
+gem 'devise', ">= 4.6.0"
 gem 'font-awesome-rails'
 gem 'haml'
 gem 'bcrypt'

@@ -1,0 +1,8 @@
+{
+  "name": "Affinity Platform",
+  "description": "Web interface for the Affinity Platform framework",
+  "version": "0.2",
+  "ins": [],
+  "out": ["components"],
+  "config_options": []
+}
