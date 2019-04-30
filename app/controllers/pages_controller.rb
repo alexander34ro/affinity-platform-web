@@ -40,7 +40,7 @@ class PagesController < ApplicationController
 
     # https://github.com/search?utf8=%E2%9C%93&q=affinity+filename%3Acomponent.js+path%3A%2F&type=Code
     github = Github.new
-    components_from_github = github.search.repos(q: 'filename:affinity_component.json path:/', type: 'Code')
+    components_from_github = github.search.repos(q: 'name ins out filename:affinity_component.json path:/', type: 'Code')
     @components += components_from_github.items.map(&:full_name)
   end
 
