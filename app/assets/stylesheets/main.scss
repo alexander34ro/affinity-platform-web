@@ -55,6 +55,16 @@ input {
   overflow-y: scroll;
 }
 
+.nav-pills {
+  box-shadow: 0px 8px 12px -12px #aaa, 0px -8px 12px -12px #aaa;
+  position: relative;
+  z-index: 10;
+}
+
+.awesomplete {
+  box-shadow: 0px 8px 12px -12px #ccc, 0px -8px 12px -12px #ccc;
+}
+
 .components-container {
   box-shadow: inset 0px 8px 12px -12px #ddd, inset 0px -8px 12px -12px #ddd;
 }
