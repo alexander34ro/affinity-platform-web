@@ -1,5 +1,5 @@
 .components-container.py-3
   - @components.each do |component|
-    .component.card.mb-2.p-3
+    .component.card.mb-3.p-3
       %h5.card-title= component.try(:[], :name) rescue component
       %h6.card-subtitle.text-muted= component.try(:[], :description) rescue ''

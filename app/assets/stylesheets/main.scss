@@ -60,7 +60,7 @@ input {
 .nav-pills {
   box-shadow: 0px 8px 12px -12px #aaa, 0px -8px 12px -12px #aaa;
   position: relative;
-  z-index: 10;
+  z-index: 1;
   min-height: 46px;
   .nav-link {
     min-height: 46px;
@@ -72,8 +72,12 @@ input {
   box-shadow: 0px 8px 12px -12px #ccc, 0px -8px 12px -12px #ccc;
 }
 
+.awesomplete > ul {
+  z-index: 5 !important;
+}
+
 .components-container {
-  box-shadow: inset 0px 8px 12px -12px #ddd, inset 0px -8px 12px -12px #ddd;
+  box-shadow: inset 0px 8px 12px -12px #ccc, inset 0px -8px 12px -12px #ccc;
 }
 
 .component {

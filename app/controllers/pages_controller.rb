@@ -2,7 +2,9 @@ class PagesController < ApplicationController
   include PagesHelper
   before_action :load_components
 
-  def home; end
+  def home
+    @components = @components.map { |c| c.try(:[], :name) rescue c }
+  end
 
   def search
     term = params[:component].downcase
@@ -42,7 +44,7 @@ class PagesController < ApplicationController
     creds = ENV['GITHUB_CREDS']
     github = Github.new basic_auth: creds
     components_from_github = github.search.code('name ins out filename:affinity_component.json path:/') rescue []
-    @github_components = components_from_github.items.map { |i| { name: i.repository.name, description: i.repository.description, config_options: []} }
+    @github_components = components_from_github.items.map { |i| { name: i.repository.name, description: i.repository.description, config_options: []} } rescue []
   end
 
   def command_executor
