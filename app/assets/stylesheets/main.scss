@@ -1,3 +1,4 @@
+$primary: #343a40;
 @import 'bootstrap';
 @import 'font-awesome';
 
@@ -15,12 +16,13 @@
 }
 
 .form-control:focus {
-  border-color: #495057;
+  border-color: #6c757d;
   box-shadow: 0 0 0 0.1rem rgba(0, 12, 25, 0.25);
 }
 
 input {
   text-align: center;
+  min-height: 46px !important;
 }
 
 .unit {
@@ -39,9 +41,9 @@ input {
 }
 
 #ring {
-  background: #333;
+  background: #343a40;
   width: auto;
-  height: 64vh;
+  height: 600px;
   margin: auto;
   line-height: 0;
 }
@@ -59,6 +61,11 @@ input {
   box-shadow: 0px 8px 12px -12px #aaa, 0px -8px 12px -12px #aaa;
   position: relative;
   z-index: 10;
+  min-height: 46px;
+  .nav-link {
+    min-height: 46px;
+    line-height: 30px;
+  }
 }
 
 .awesomplete {
@@ -74,11 +81,15 @@ input {
 }
 
 .btn {
-  min-width: 46px;
+  min-width: 60px;
   min-height: 46px;
   line-height: 2;
   border-radius: 0.4rem;
   padding: 0.375rem 1.2rem;
+}
+
+.card {
+  box-shadow: 0px 8px 8px -12px #ccc, 0px -8px 4px -12px #ccc;
 }
 
 a {

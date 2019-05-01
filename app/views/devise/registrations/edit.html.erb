@@ -43,6 +43,5 @@
     <div class="float-right"><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-dark float-right" %></div>
   </div>
 
-  <hr>
-  <%= link_to "Back", :back, class: "btn btn-dark" %>
+  <%= render "devise/shared/links" %>
 </div>
