@@ -26,6 +26,7 @@ do:
     script += `
     - ({${output}}) -> {$.util.getInspectedObject} -> output`;
 
+    return script;
     insertScript(script);
 }
 

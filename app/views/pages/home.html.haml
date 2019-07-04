@@ -35,15 +35,15 @@
           %hr.border-white
           %ul.nav.nav-pills.nav-fill
             %li.nav-item
-              %a.nav-link.active{href: "#"}
+              %a.nav-link.active{href: ""}
                 %i.fa.fa-search.mr-1
                 Recent
             %li.nav-item
-              %a.nav-link{href: "#"}
+              %a.nav-link{href: ""}
                 %i.fa.fa-lg.fa-user-circle.mr-1{style: "font-size: 1.15em"}
                 Private
             %li.nav-item
-              %a.nav-link{href: "#"}
+              %a.nav-link{href: ""}
                 %i.fa.fa-lg.fa-github.mr-1
                 GitHub
           #components
@@ -51,7 +51,7 @@
         .col-lg-9
           #ring
   %hr
-  .row
+  .row.hidden
     .col-lg-12
       = text_area_tag 'script', "", rows: 10, class: "form-control"
 

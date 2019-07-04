@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   include PagesHelper
   before_action :load_components
+  before_action :load_github_components
 
   def home
     @components = @components.map { |c| c.try(:[], :name) rescue c }
@@ -24,6 +25,7 @@ class PagesController < ApplicationController
     @components =
       [
         command_executor,
+        dummy_ai,
         sender,
         server,
         bluetooth_sender,
@@ -39,18 +41,29 @@ class PagesController < ApplicationController
         'Camera Fuser',
         'Band Reader'
       ]
+  end
 
+  def load_github_components
     # https://github.com/search?utf8=%E2%9C%93&q=affinity+filename%3Acomponent.js+path%3A%2F&type=Code
     creds = ENV['GITHUB_CREDS']
     github = Github.new basic_auth: creds
     components_from_github = github.search.code('name ins out filename:affinity_component.json path:/') rescue []
     @github_components = components_from_github.items.map { |i| { name: i.repository.name, description: i.repository.description, config_options: []} } rescue []
+    @components += @github_components
   end
 
   def command_executor
     {
       name: 'Command Executor',
       description: 'Execute a given system command',
+      config_options: ['command']
+    }
+  end
+
+  def dummy_ai
+    {
+      name: 'Dummy AI',
+      description: 'Expert system for classifying system load',
       config_options: ['command']
     }
   end
