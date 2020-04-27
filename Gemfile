@@ -8,6 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.2'
+gem 'typescript-rails'
 gem 'github_api'
 gem 'devise', ">= 4.6.0"
 gem 'font-awesome-rails'

@@ -25,6 +25,8 @@ class PagesController < ApplicationController
     @components =
       [
         command_executor,
+        af_logger,
+        replicator,
         dummy_ai,
         sender,
         server,
@@ -54,8 +56,24 @@ class PagesController < ApplicationController
 
   def command_executor
     {
-      name: 'Command Executor',
-      description: 'Execute a given system command',
+      name: 'Invoker',
+      description: 'Execute a given command',
+      config_options: ['command']
+    }
+  end
+
+  def af_logger
+    {
+      name: 'Logger',
+      description: 'Display input',
+      config_options: ['command']
+    }
+  end
+
+  def replicator
+    {
+      name: 'Replicator',
+      description: 'Split the input into identical output streams',
       config_options: ['command']
     }
   end

@@ -1,5 +1,8 @@
 {
   "name": "affinity_platform_web",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.7.11"
+  }
 }
