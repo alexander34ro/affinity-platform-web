@@ -26,7 +26,8 @@ class PagesController < ApplicationController
       [
         command_executor,
         af_logger,
-        replicator,
+        splitter,
+        parallel_splitter,
         dummy_ai,
         sender,
         server,
@@ -66,15 +67,23 @@ class PagesController < ApplicationController
     {
       name: 'Logger',
       description: 'Display input',
-      config_options: ['command']
+      config_options: []
     }
   end
 
-  def replicator
+  def splitter
     {
-      name: 'Replicator',
+      name: 'Splitter',
       description: 'Split the input into identical output streams',
-      config_options: ['command']
+      config_options: []
+    }
+  end
+
+  def parallel_splitter
+    {
+      name: 'Parallel Splitter',
+      description: 'Split the input into identical output streams and send them to other services in parallel',
+      config_options: []
     }
   end
 
@@ -90,7 +99,7 @@ class PagesController < ApplicationController
     {
       name: 'Sender',
       description: 'Send data over HTTP',
-      config_options: ['url', 'port']
+      config_options: ['url', 'port', 'server']
     }
   end
 
