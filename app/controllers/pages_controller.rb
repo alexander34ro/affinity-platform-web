@@ -2,8 +2,10 @@ class PagesController < ApplicationController
   include PagesHelper
   before_action :load_components
   before_action :load_github_components
+  skip_before_action :verify_authenticity_token, only: [:save_component]
 
   def home
+    #  session.delete(:components)
     @components = @components.map { |c| c.try(:[], :name) rescue c }
   end
 
@@ -16,7 +18,18 @@ class PagesController < ApplicationController
   def component
     term = params[:component]
     @component = @components.select { |c| !c.instance_of?(String) && c[:name] == term }.first
+    @component = custom_component if @component.blank?
     render layout: false
+  end
+
+  def save_component
+    session[:components] = [] if session[:components].blank?
+    session[:components] += [{
+      name: params[:name],
+      description: params[:description],
+      config_options: ['command'],
+      default: [params[:command]]
+    }]
   end
 
   private
@@ -53,6 +66,15 @@ class PagesController < ApplicationController
     components_from_github = github.search.code('name ins out filename:affinity_component.json path:/') rescue []
     @github_components = components_from_github.items.map { |i| { name: i.repository.name, description: i.repository.description, config_options: []} } rescue []
     @components += @github_components
+    @components += session[:components].to_a.map! { |h| h.symbolize_keys }
+  end
+
+  def custom_component
+    {
+      name: 'Custom Component',
+      description: 'Create a custom component for private use',
+      config_options: ['name', 'description', 'command']
+    }
   end
 
   def command_executor
@@ -107,7 +129,7 @@ class PagesController < ApplicationController
     {
       name: 'Server',
       description: 'Receive data over HTTP',
-      config_options: ['port']
+      config_options: []
     }
   end
 

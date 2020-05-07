@@ -71,7 +71,7 @@ $('document').ready(function () {
     evt.consume();
   });
 
-  $(document).on('submit', '#save-component', e => {
+  $(document).on('submit', '#componentDetails #save-component', e => {
     e.preventDefault(e);
 
     config_options = {};
@@ -80,5 +80,21 @@ $('document').ready(function () {
     });
     graph.getSelectionCell().value.config_options = config_options;
     $("#componentDetails").modal("hide");
+  });
+
+  $('#custom').on('click', e => {
+    $.ajax({
+      url: $(location).attr("href") + "/component?component=" + encodeURI("Custom")
+    }).done((data) => {
+      $("#customComponentDetails").modal();
+      $("#customComponentDetails .modal-body").html(data);
+      Object.entries(["name", "description", "command"]).forEach((pair) => {
+        $(".config-option#" + pair[0]).val(pair[1]);
+      });
+    });
+  });
+
+  $(document).on('submit', '#customComponentDetails #save-component', e => {
+    $("#customComponentDetails").modal("hide");
   });
 });

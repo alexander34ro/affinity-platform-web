@@ -11,7 +11,8 @@ function generate() {
 `;
 
     let ins = "";
-    if (components.some(x => x.value.name === "Server")) ins = 'input';
+    let server = components.find(x => x.value.name === "Server");
+    if (server != undefined) ins = "out_" + server.id;
 
     let script = "";
     script +=
@@ -43,13 +44,18 @@ do:
             extra_indentation++;
         } else if (name === "Sender") {
             let url = "'" + component.value.config_options.url + ':' + component.value.config_options.port + "'";
-            let server = "'server_" + component.id + ".chiml'";
+            let server = "'" + component.value.config_options.server + ".chiml'";
             script += indentation + `- (${url + ", " + server + ", out_" + inputs[0].source.id}) -> [$.send] -> ${"out_" + component.id}`;
+        } else if (name === "Server") {
+
+        } else {
+            if (inputs.length > 0) script += indentation + `- ${"out_" + inputs[0].source.id} -> ${component.value.config_options.command} -> ${"out_" + component.id}`;
+            else script += indentation + `- ${component.value.config_options.command} -> ${"out_" + component.id}`;
         }
         script += nl;
     });
 
-    let output = components.map(c => "out_" + c.id).join(", ");
+    let output = components.map(c => "out_" + c.id).pop();//.join(", ");
     script += `
     - ({${output}}) -> {$.util.getInspectedObject} -> output`;
 

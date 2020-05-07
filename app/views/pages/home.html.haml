@@ -5,9 +5,9 @@
         %h2 Affinity Platform
         %h5.subtitle.m-0 Create an app by chaining components
       .d-flex.flex-wrap.align-content-center
-        #import.btn.mr-1
+        #custom.btn.mr-1
           %i.fa.fa-upload.mr-1
-          Import Component
+          Custom Component
         #generate.btn.mr-1
           %i.fa.fa-print.mr-1
           Generate Script
@@ -56,6 +56,14 @@
       = text_area_tag 'script', "", rows: 10, class: "form-control"
 
 #componentDetails.modal.fade
+  .modal-dialog.modal-dialog-centered
+    .modal-content
+      .modal-header
+        %h4.modal-title Component Options
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      .modal-body
+
+#customComponentDetails.modal.fade
   .modal-dialog.modal-dialog-centered
     .modal-content
       .modal-header
