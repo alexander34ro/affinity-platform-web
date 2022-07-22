@@ -490,7 +490,7 @@ GEM
       tilt
       typescript-node (>= 1.6.2)
     typescript-src (1.6.2.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uber (0.1.0)
     uglifier (4.1.20)
